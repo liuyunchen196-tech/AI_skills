@@ -1,0 +1,15 @@
+{
+  "name": "pdf-inspector",
+  "displayName": "PDF文档体检 类型识别 文本抽取",
+  "encoding_fallback": [
+    "utf-8",
+    "gbk",
+    "gb18030"
+  ],
+  "features": [
+    "cli",
+    "selftest",
+    "dry-run",
+    "error-handling"
+  ]
+}

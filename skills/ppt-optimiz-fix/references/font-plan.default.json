@@ -1,0 +1,11 @@
+{
+  "description": "字体规划【通用示例，零关键词】：fontplan 引擎按「位置(页序/版面区域/页码角) + 字号(标题带内最大)」自动推断每个 run 的角色，再套用对应字号/字重/字色/字体。拿来即用，不要求你事先知道稿子里有什么词。规则按特异性从高到低排列（最先命中的规则生效）。安全性约定：Body 角色不写 size，只统一字族/字色，保留稿内原有正文字号层级（非破坏性默认）；只有标题/页脚/章节标签等高置信角色才强制字号。如需对某个无法用位置/字号区分的角色做精确控制，可在其 when 里加 \"match\":\"关键词\" 作高级覆盖（可选）。配合 fix_pptx.py --apply-font-plan 使用。",
+  "rules": [
+    { "role": "Footer",  "when": { "pagenum": true },                     "size": 11, "bold": false, "name": "微软雅黑", "color": "999999" },
+    { "role": "Footer",  "when": { "zone": "footer" },                   "size": 11, "bold": false, "name": "微软雅黑", "color": "999999" },
+    { "role": "Display", "when": { "slide": "first", "size": "largest" }, "size": 44, "bold": true,  "name": "微软雅黑", "color": "1F3864" },
+    { "role": "Title",   "when": { "slide": "content", "size": "largest" }, "size": 30, "bold": true, "name": "微软雅黑", "color": "1F3864" },
+    { "role": "Kicker",  "when": { "zone": "kicker" },                   "size": 12, "bold": true,  "name": "微软雅黑", "color": "1F3864" },
+    { "role": "Body",    "when": { "slide": "any" },                     "bold": false, "name": "微软雅黑", "color": "222222" }
+  ]
+}

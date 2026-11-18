@@ -1,0 +1,26 @@
+# 本地运行时与工具（不入库）
+/runtime/
+/archive/
+
+# 会话 / 工作区临时记录
+/.mobilework-sessions.json
+/.mobilework-workspace
+/2026-*/
+
+# 宿主应用配置与缓存
+/.opencode/
+
+# 依赖与虚拟环境（各技能自行安装）
+node_modules/
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+
+# 技能内嵌的独立 Git 仓库
+**/.git/
+
+# 系统与编辑器杂项
+Thumbs.db
+desktop.ini
+.DS_Store

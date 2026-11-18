@@ -1,0 +1,27 @@
+﻿{
+  "diagram_type": "flowchart",
+  "title": "课程建设与上线审核流程",
+  "subtitle": "包含审核分支和退回修改回路",
+  "direction": "top-down",
+  "theme": "chaoxing-blue",
+  "nodes": [
+    {"id": "start", "label": "开始", "shape": "start"},
+    {"id": "submit", "label": "教师提交课程", "shape": "process"},
+    {"id": "dept-review", "label": "院系审核", "description": "检查课程内容和建设规范", "shape": "decision"},
+    {"id": "revise", "label": "教师修改", "shape": "process"},
+    {"id": "school-review", "label": "学校审核", "shape": "decision"},
+    {"id": "publish", "label": "课程上线", "shape": "process"},
+    {"id": "end", "label": "结束", "shape": "end"}
+  ],
+  "edges": [
+    {"from": "start", "to": "submit"},
+    {"from": "submit", "to": "dept-review"},
+    {"from": "dept-review", "to": "school-review", "label": "通过"},
+    {"from": "dept-review", "to": "revise", "label": "退回"},
+    {"from": "revise", "to": "submit", "label": "重新提交"},
+    {"from": "school-review", "to": "publish", "label": "通过"},
+    {"from": "school-review", "to": "revise", "label": "退回"},
+    {"from": "publish", "to": "end"}
+  ]
+}
+

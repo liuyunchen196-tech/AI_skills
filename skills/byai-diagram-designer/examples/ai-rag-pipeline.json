@@ -1,0 +1,37 @@
+{
+  "schema_version": "1",
+  "diagram_type": "ai.rag",
+  "meta": {
+    "title": "RAG 检索增强生成链路",
+    "subtitle": "离线入库与在线问答双链路",
+    "style": "clean-tech",
+    "quality_profile": "showcase"
+  },
+  "nodes": [
+    { "id": "docs", "label": "原始文档", "type": "storage", "icon": "doc", "tech": "PDF / Markdown" },
+    { "id": "split", "label": "切分与清洗", "type": "process", "icon": "filter", "tech": "递归切分 512" },
+    { "id": "embed", "label": "向量化", "type": "process", "icon": "embed", "tech": "bge-m3" },
+    { "id": "vdb", "label": "向量库", "type": "vector", "icon": "vector", "tech": "Milvus" },
+    { "id": "q", "label": "用户提问", "type": "user", "icon": "user" },
+    { "id": "qembed", "label": "问题向量化", "type": "process", "icon": "embed", "tech": "同一模型" },
+    { "id": "recall", "label": "召回", "type": "process", "icon": "search", "tech": "Top-K 20" },
+    { "id": "rerank", "label": "重排", "type": "process", "icon": "chart", "tech": "bge-reranker", "variant": "emphasis" },
+    { "id": "llm", "label": "大模型", "type": "llm", "icon": "brain", "tech": "GPT 级模型" },
+    { "id": "ans", "label": "带引用的回答", "type": "process", "icon": "spark", "tech": "流式输出" }
+  ],
+  "edges": [
+    { "source": "docs", "target": "split", "label": "入库", "kind": "flow" },
+    { "source": "split", "target": "embed", "label": "切片", "kind": "flow" },
+    { "source": "embed", "target": "vdb", "label": "写入", "kind": "write" },
+    { "source": "q", "target": "qembed", "label": "提问", "kind": "flow" },
+    { "source": "qembed", "target": "recall", "label": "查询向量", "kind": "read" },
+    { "source": "vdb", "target": "recall", "label": "相似度检索", "kind": "read" },
+    { "source": "recall", "target": "rerank", "label": "候选 20", "kind": "flow" },
+    { "source": "rerank", "target": "llm", "label": "精选 5", "kind": "flow" },
+    { "source": "llm", "target": "ans", "label": "生成", "kind": "flow" }
+  ],
+  "views": [
+    { "id": "online", "label": "在线问答链路", "nodes": ["q", "qembed", "recall", "rerank", "llm", "ans"] },
+    { "id": "offline", "label": "离线入库链路", "nodes": ["docs", "split", "embed", "vdb"] }
+  ]
+}

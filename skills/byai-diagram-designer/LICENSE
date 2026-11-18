@@ -1,0 +1,105 @@
+流程图设计助手（byai-diagram-designer）
+Copyright (C) 2026 百应AI工作室（Baiying AI Studio）
+
+本项目下列条款发布：
+
+一、授权范围
+1. 允许任何人免费使用、复制、修改、合并、发布、分发本技能，用于个人
+   或商业目的。
+2. 允许在 WorkBuddy / CodeBuddy 等平台上安装、分享本技能包。
+3. 本技能全部代码与文档由百应AI工作室独立编写实现，采用纯标准库
+   （Python 3 标准库），不依赖任何第三方包。
+
+二、义务与限制
+1. 署名：再分发或二次开发时，必须保留本声明，并保留「百应AI工作室」
+   署名。
+2. 禁止转售：不得将本技能原样或仅改名后作为独立商品单独售卖；将其
+   作为更大产品/服务的一部分提供，不在此限。
+3. 免责：本技能按「现状」提供，不作任何明示或默示担保。作者不对因
+   使用本技能产生的任何内容责任、数据损失或商业风险负责。
+4. 商标：本条款不授予使用「百应 / Baiying」「WorkBuddy」等名称、
+   商标的权利。
+
+三、条款变更
+百应AI工作室保留在后续版本中调整本授权条款的权利；调整仅适用于
+新版本，已发布版本继续适用其发布时的条款。
+
+四、技术参照与上游署名
+本技能在研发过程中参考了以下两个 MIT 协议开源项目的技术思路与
+视觉设计参考：
+
+  1) archify（@tt-a1i，MIT License）
+     https://github.com/tt-a1i/archify
+     借鉴：交互式查看器与正交无交叉路由的视觉理念。
+
+  2) fireworks-tech-graph（@yizhiyanhua-ai，MIT License）
+     https://github.com/yizhiyanhua-ai/fireworks-tech-graph
+     借鉴：风格分层、AI/Agent 模式语义、UML 子集的图型分级。
+
+本技能的全部代码、配色、文档与品牌均由百应AI工作室独立编写实现，
+未复制上述项目的具体代码或品牌标识。如再分发或二次开发，请同时保
+留本技能署名「百应AI工作室」与上述两个上游项目的原作者署名。
+
+—— 2026-09-08 制定
+
+
+**Baiying Diagram Designer (byai-diagram-designer)**
+Copyright (C) 2026 Baiying AI Studio
+
+This project is released under the following terms:
+
+---
+
+**I. Grant of Rights**
+1. Anyone is permitted to use, copy, modify, merge, publish, and distribute
+   this skill free of charge, for personal or commercial purposes.
+2. Installation and sharing of this skill package on platforms such as
+   WorkBuddy / CodeBuddy are permitted.
+3. All code and documentation in this skill are independently written by
+   Baiying AI Studio using only the Python 3 standard library, with no
+   third-party package dependencies.
+
+**II. Obligations and Restrictions**
+1. **Attribution:** Redistribution or derivative works must retain this
+   notice and include attribution to "Baiying AI Studio."
+2. **No Resale:** This skill may not be sold as a standalone commercial
+   product, either in its original form or under a renamed title, except as
+   part of a larger product or service offering.
+3. **Disclaimer:** This skill is provided "as is," without any express or
+   implied warranties. The author assumes no responsibility for any content
+   liability, data loss, or commercial risks arising from its use.
+4. **Trademarks:** These terms do not grant any rights to use names or
+   trademarks such as "Baiying / Baiying," "WorkBuddy," etc.
+
+**III. Amendment of Terms**
+Baiying AI Studio reserves the right to adjust these license terms in future
+versions. Such adjustments apply only to new versions; previously released
+versions remain governed by the terms in effect at the time of their release.
+
+---
+
+*Established: 2026-09-08*
+
+---
+
+**IV. Upstream Acknowledgements**
+This skill was developed with reference to the technical ideas and
+visual design conventions of the following two MIT-licensed open
+source projects:
+
+  1) archify by @tt-a1i (MIT License)
+     https://github.com/tt-a1i/archify
+     Inspiration: interactive viewer and orthogonal non-crossing routing
+     of the visual concept.
+
+  2) fireworks-tech-graph by @yizhiyanhua-ai (MIT License)
+     https://github.com/yizhiyanhua-ai/fireworks-tech-graph
+     Inspiration: style layering, AI/Agent pattern semantics, and the
+     UML subset diagram taxonomy.
+
+All code, color palettes, documentation and branding in this skill are
+independently written by Baiying AI Studio. No specific code or branding
+was copied from the upstream projects. Any redistribution or derivative
+work must preserve both the "Baiying AI Studio" attribution and the
+attribution to the original authors of the two upstream projects listed
+above.

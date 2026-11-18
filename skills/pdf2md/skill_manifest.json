@@ -1,0 +1,7 @@
+{
+  "slug": "pdf2md",
+  "generated_at": "2026-08-21T12:39:37",
+  "version": "1.0.1",
+  "displayName": "PDF转Markdown 文档解析与文本提取",
+  "description": "将PDF文件高效转换为结构化Markdown，保留关键信息与格式。"
+}

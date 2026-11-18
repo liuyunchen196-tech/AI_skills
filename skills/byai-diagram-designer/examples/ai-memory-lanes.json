@@ -1,0 +1,33 @@
+{
+  "schema_version": "1",
+  "diagram_type": "ai.memory",
+  "meta": {
+    "title": "Agent 记忆架构（Mem0 形态）",
+    "subtitle": "输入 → 记忆管理 → 分层存储 → 检索回流",
+    "style": "dark-terminal",
+    "quality_profile": "showcase"
+  },
+  "lanes": [
+    { "id": "in", "label": "入口" },
+    { "id": "core", "label": "记忆管理" },
+    { "id": "store", "label": "存储分层" }
+  ],
+  "nodes": [
+    { "id": "chat", "label": "对话输入", "type": "user", "icon": "user", "lane": "in" },
+    { "id": "extract", "label": "事实抽取", "type": "agent", "icon": "robot", "lane": "in", "tech": "LLM 抽取" },
+    { "id": "mgr", "label": "记忆管理器", "type": "agent", "icon": "robot", "lane": "core", "variant": "emphasis", "tech": "冲突消解" },
+    { "id": "vdb", "label": "向量记忆", "type": "vector", "icon": "vector", "lane": "store", "tech": "语义相似" },
+    { "id": "graph", "label": "图谱记忆", "type": "database", "icon": "network", "lane": "store", "tech": "实体关系" },
+    { "id": "kv", "label": "键值记忆", "type": "database", "icon": "cache", "lane": "store", "tech": "精确事实" }
+  ],
+  "edges": [
+    { "source": "chat", "target": "extract", "label": "原始消息", "kind": "flow" },
+    { "source": "extract", "target": "mgr", "label": "候选事实", "kind": "flow" },
+    { "source": "mgr", "target": "vdb", "label": "写入", "kind": "write" },
+    { "source": "mgr", "target": "graph", "label": "写入", "kind": "write" },
+    { "source": "mgr", "target": "kv", "label": "写入", "kind": "write" },
+    { "source": "vdb", "target": "mgr", "label": "召回", "kind": "read" },
+    { "source": "graph", "target": "mgr", "label": "召回", "kind": "read" },
+    { "source": "kv", "target": "mgr", "label": "召回", "kind": "read" }
+  ]
+}

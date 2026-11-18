@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PPT 评估报告</title>
+<style>
+:root{--p0:#dc2626;--p1:#ea580c;--p2:#ca8a04;--obs:#2563eb;--ink:#1f2329;--mut:#6b7280;--line:#e8eaed;--bg:#fafbfc;--card:#fff;--accent:#3b5bdb;}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,"Microsoft YaHei","PingFang SC",sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:14px}
+.wrap{max-width:1000px;margin:0 auto;padding:24px 20px 48px}
+header{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:12px;padding:22px 24px;margin-bottom:18px}
+.h-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+header h1{margin:0;font-size:20px;font-weight:800}
+.src{font-size:12px;color:var(--mut)}
+.meta{font-size:12.5px;color:var(--mut);margin-top:6px}
+.overview{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:16px}
+.score{font-size:42px;font-weight:800;line-height:1;color:var(--ink)}
+.score span{font-size:15px;color:var(--mut);font-weight:600}
+.badge{padding:4px 12px;border-radius:16px;font-weight:700;font-size:13px}
+.lvl-good{background:#e7f6ec;color:#15803d}.lvl-ok{background:#fef3c7;color:#b45309}.lvl-bad{background:#fde8e8;color:#b91c1c}
+.counts{display:flex;gap:8px;margin-left:auto;flex-wrap:wrap}
+.counts .c{padding:5px 11px;border-radius:8px;font-size:12.5px;font-weight:700;color:#fff}
+.c-P0{background:var(--p0)}.c-P1{background:var(--p1)}.c-P2{background:var(--p2)}.c-观察{background:var(--obs)}
+.headline{margin-top:14px;font-size:13px;color:#374151;background:#f4f6f9;border-radius:8px;padding:9px 13px}
+.p0-alert{background:#fff5f5;border:1px solid #f1c4c4;border-left:5px solid var(--p0);border-radius:10px;padding:14px 18px;margin-bottom:18px}
+.p0-title{font-weight:800;color:var(--p0);font-size:15px;margin-bottom:8px}
+.p0-alert ul{margin:0;padding-left:18px}
+.p0-alert li{margin:4px 0;font-size:13.5px}
+.p0-ev{color:var(--mut);font-size:12.5px}
+.p0-ok{background:#e7f6ec;border:1px solid #bfe3cb;border-radius:10px;padding:12px 16px;margin-bottom:18px;color:#15803d;font-weight:700}
+section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:16px}
+h2{font-size:16px;margin:0 0 14px;font-weight:800}
+h2 .sub{font-size:12px;color:var(--mut);font-weight:500;margin-left:6px}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:9px;padding:13px}
+.dim-head{display:flex;justify-content:space-between;align-items:baseline}
+.dim-name{font-weight:700}.dim-score{font-size:22px;font-weight:800;color:var(--accent)}
+.dim-sub{font-size:12px;color:var(--mut);font-weight:500}
+.dim-mean{font-size:12px;color:var(--mut);margin:5px 0}
+.dim-ev{margin:0;padding-left:16px;font-size:12.5px;color:#374151}
+.defect{border:1px solid var(--line);border-radius:9px;padding:11px 13px;margin-bottom:9px}
+.defect.is-p0{border-color:#f1c4c4;background:#fffafa}
+.defect-head{font-weight:700;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.sev{color:#fff;padding:2px 9px;border-radius:6px;font-size:12px;font-weight:700}
+.sev-P0{background:var(--p0)}.sev-P1{background:var(--p1)}.sev-P2{background:var(--p2)}.sev-观察{background:var(--obs)}
+.chip{background:#eef1f5;color:#374151;border-radius:5px;padding:1px 7px;font-size:12px;font-weight:700}
+.cat{color:var(--mut);font-size:12px;font-weight:600}
+.chain{margin-top:7px;font-size:12.5px;display:grid;gap:2px}
+.chain b{color:var(--accent)}
+.grp{margin-bottom:14px}.grp-h{font-size:14px;margin:0 0 9px;padding-bottom:4px;border-bottom:1px solid var(--line)}
+.dsec{margin-bottom:12px}.dsec h4{margin:0 0 5px;font-size:13.5px}
+.mini{font-size:12.5px;margin:3px 0}
+.ok{color:#15803d;font-size:13px}
+ul.strengths{margin:0;padding-left:18px;font-size:13.5px}
+.action{font-size:13.5px;line-height:1.8}
+.action b{color:var(--accent)}
+footer{text-align:center;color:var(--mut);font-size:12px;margin-top:8px}
+</style></head>
+<body><div class="wrap">
+<header>
+  <div class="h-row"><h1>PPT 评估报告</h1><span class="src">企业AI办公提效_样例</span></div>
+  <div class="meta">8 页 · 13.33 × 7.50 in · 自动页码占位符 0 · 结构化 XML 诊断（非肉眼）</div>
+  <div class="overview">
+    <div class="score">3.7<span>/5</span></div>
+    <span class="badge lvl-ok">良好 · 需修校</span>
+    <div class="counts">
+      <span class="c c-P0">P0 3</span><span class="c c-P1">P1 8</span>
+      <span class="c c-P2">P2 1</span><span class="c c-观察">观察 0</span>
+    </div>
+  </div>
+  <div class="headline">结论：存在 3 项 P0 硬缺陷（页码/重复/越界/占位符），可优先自动修清；五维均分 3.7（良好 · 需修校）；Action-Title 占比 14%（标题未充分结论化）</div>
+</header>
+
+<div class="p0-alert"><div class="p0-title">⚠ 发现 3 项 P0 必修复（硬缺陷，优先处理）</div><ul><li><span class="chip">S3</span> 页码与绝对序号错位 <span class="p0-ev">— S3 页脚数字=99，但绝对序号应为 3</span></li><li><span class="chip">全篇</span> 重复标题 <span class="p0-ev">— 标题「三类重复工作最耗人」出现 2 次</span></li><li><span class="chip">S6</span> 未完成占位符 <span class="p0-ev">— S6 检出未替换占位符：【姓名</span></li></ul></div>
+
+<section><h2>五维评分 <span class="sub">分数由诊断证据推导</span></h2>
+  <div class="dims">
+      <div class="dim">
+        <div class="dim-head"><span class="dim-name">结构逻辑</span>
+          <span class="dim-score">1.8<span class="dim-sub">/5</span></span></div>
+        <div class="dim-mean">Why—What—How—Next 认知链是否完整、标题是否即结论</div>
+        <ul class="dim-ev"><li>Action-Title 占比 14%（&lt;60%，偏说明文）</li><li>6 个话题式标题未结论化（S2/3/5/6/7/8）</li><li>封面已点题（用 AI 办公，把重复工时砍掉一半）</li><li>存在重复标题</li><li>S3 页码错位</li></ul>
+      </div>
+      <div class="dim">
+        <div class="dim-head"><span class="dim-name">内容深度</span>
+          <span class="dim-score">3.1<span class="dim-sub">/5</span></span></div>
+        <div class="dim-mean">是否有量化数据/案例/可溯源证据，无占位符与空话</div>
+        <ul class="dim-ev"><li>黑话/套话 1 处</li><li>未完成占位符（SS6）</li><li>无图表/图片，数据以文字罗列，可读性弱</li></ul>
+      </div>
+      <div class="dim">
+        <div class="dim-head"><span class="dim-name">受众适配</span>
+          <span class="dim-score">4.6<span class="dim-sub">/5</span></span></div>
+        <div class="dim-mean">语言与密度是否匹配目标受众决策链（已接入自动信号，人工仅兜底）</div>
+        <ul class="dim-ev"><li>自动识别行动收口页(S6)，决策指引完整</li><li>自动识别 ROI/收益量化页(S4)，用业务语言谈成本收益</li><li>管理者语言密度充分（价值/成本/风险 等）</li><li>注：受众密度/语气最终仍结合目标受众(决策/执行)人工复核</li></ul>
+      </div>
+      <div class="dim">
+        <div class="dim-head"><span class="dim-name">视觉呈现</span>
+          <span class="dim-score">4.6<span class="dim-sub">/5</span></span></div>
+        <div class="dim-mean">字体/配色/越界/图文比是否统一规范</div>
+        <ul class="dim-ev"><li>字体统一（2 字族）</li><li>配色 4 色相（≤4，符合 60-30-10）</li><li>全篇 0 图，纯字墙，缺视觉锚点</li></ul>
+      </div>
+      <div class="dim">
+        <div class="dim-head"><span class="dim-name">说服力</span>
+          <span class="dim-score">4.5<span class="dim-sub">/5</span></span></div>
+        <div class="dim-mean">是否痛点→方案→收益→行动闭环（已接入自动信号，ROI 数值真实性人工兜底）</div>
+        <ul class="dim-ev"><li>开篇立论 + 行动收口页，证据链闭环</li><li>自动识别量化 ROI/回收期页(S4)，收益可量化</li><li>黑话/空洞削弱论证可信度</li><li>注：ROI 数值真实性仍需人工确认</li></ul>
+      </div></div>
+</section>
+
+<section><h2>缺陷清单 <span class="sub">按优先级，每条含 证据→影响→建议</span></h2>
+  <div class="grp"><h3 class="grp-h sev-P0">P0 必修复 · 3 项</h3>
+        <div class="defect is-p0">
+          <div class="defect-head"><span class="sev sev-P0">P0 必修复</span>
+            <span class="chip">全篇</span> <span class="cat">逻辑</span> 重复标题</div>
+          <div class="chain">
+            <div><b>证据</b>：标题「三类重复工作最耗人」出现 2 次</div>
+            <div><b>影响</b>：疑似重复页/重复内容，信息冗余且易被抓包矛盾</div>
+            <div><b>建议</b>：用 fix_pptx.py --delete-dupes 保留首个；或合并内容</div>
+          </div>
+        </div>
+        <div class="defect is-p0">
+          <div class="defect-head"><span class="sev sev-P0">P0 必修复</span>
+            <span class="chip">S3</span> <span class="cat">排版</span> 页码与绝对序号错位</div>
+          <div class="chain">
+            <div><b>证据</b>：S3 页脚数字=99，但绝对序号应为 3</div>
+            <div><b>影响</b>：翻页跳号，读者对不上页码，专业感直接受损</div>
+            <div><b>建议</b>：用 fix_pptx.py 自动校正（保留首 run 格式）；属纯字段错误，一次会话即可清空</div>
+          </div>
+        </div>
+        <div class="defect is-p0">
+          <div class="defect-head"><span class="sev sev-P0">P0 必修复</span>
+            <span class="chip">S6</span> <span class="cat">内容</span> 未完成占位符</div>
+          <div class="chain">
+            <div><b>证据</b>：S6 检出未替换占位符：【姓名</div>
+            <div><b>影响</b>：占位符未替换即交付，等于把草稿发给受众，严重失专业</div>
+            <div><b>建议</b>：用真实数据/实测值替换（如【部门/姓名】填具体人与部门），或删除该占位行</div>
+          </div>
+        </div></div><div class="grp"><h3 class="grp-h sev-P1">P1 应修复 · 8 项</h3>
+        <div class="defect">
+          <div class="defect-head"><span class="sev sev-P1">P1 应修复</span>
+            <span class="chip">S2</span> <span class="cat">逻辑</span> 话题式标题（未结论化）</div>
+          <div class="chain">
+            <div><b>证据</b>：S2 标题「背景与痛点」为话题标签，非论断式结论</div>
+            <div><b>影响</b>：只读标题读不出该页论点，金字塔叙事断裂，管理者抓不住重点</div>
+            <div><b>建议</b>：改写为「谁 + 做什么 + 带来什么」的结论句，如「用 WorkBuddy 4 步产出专业初稿」</div>
+          </div>
+        </div>
+        <div class="defect">
+          <div class="defect-head"><span class="sev sev-P1">P1 应修复</span>
+            <span class="chip">S2</span> <span class="cat">语言</span> 机械化过渡句</div>
+          <div class="chain">
+            <div><b>证据</b>：检出 1 处（如 随着人工智能的发展），出现于 SS2</div>
+            <div><b>影响</b>：「总而言之/值得注意的是」等套话暴露生成器审美，削弱真实感</div>
+            <div><b>建议</b>：删去过渡句，用结论直接衔接；段间改用「但是/所以」等真实逻辑词</div>
+          </div>
+        </div>
+        <div class="defect">
+          <div class="defect-head"><span class="sev sev-P1">P1 应修复</span>
+            <span class="chip">S3</span> <span class="cat">逻辑</span> 话题式标题（未结论化）</div>
+          <div class="chain">
+            <div><b>证据</b>：S3 标题「三类重复工作最耗人」为话题标签，非论断式结论</div>
+            <div><b>影响</b>：只读标题读不出该页论点，金字塔叙事断裂，管理者抓不住重点</div>
+            <div><b>建议</b>：改写为「谁 + 做什么 + 带来什么」的结论句，如「用 WorkBuddy 4 步产出专业初稿」</div>
+          </div>
+        </div>
+        <div class="defect">
+          <div class="defect-head"><span class="sev sev-P1">P1 应修复</span>
+            <span class="chip">S5</span> <span class="cat">逻辑</span> 话题式标题（未结论化）</div>
+          <div class="chain">
+            <div><b>证据</b>：S5 标题「实施三步走」为话题标签，非论断式结论</div>
+            <div><b>影响</b>：只读标题读不出该页论点，金字塔叙事断裂，管理者抓不住重点</div>
+            <div><b>建议</b>：改写为「谁 + 做什么 + 带来什么」的结论句，如「用 WorkBuddy 4 步产出专业初稿」</div>
+          </div>
+        </div>
+        <div class="defect">
+          <div class="defect-head"><span class="sev sev-P1">P1 应修复</span>
+            <span class="chip">S6</span> <span class="cat">逻辑</span> 话题式标题（未结论化）</div>
+          <div class="chain">
+            <div><b>证据</b>：S6 标题「试点负责人与排期」为话题标签，非论断式结论</div>
+            <div><b>影响</b>：只读标题读不出该页论点，金字塔叙事断裂，管理者抓不住重点</div>
+            <div><b>建议</b>：改写为「谁 + 做什么 + 带来什么」的结论句，如「用 WorkBuddy 4 步产出专业初稿」</div>
+          </div>
+        </div>
+        <div class="defect">
+          <div class="defect-head"><span class="sev sev-P1">P1 应修复</span>
+            <span class="chip">S7</span> <span class="cat">逻辑</span> 话题式标题（未结论化）</div>
+          <div class="chain">
+            <div><b>证据</b>：S7 标题「总结」为话题标签，非论断式结论</div>
+            <div><b>影响</b>：只读标题读不出该页论点，金字塔叙事断裂，管理者抓不住重点</div>
+            <div><b>建议</b>：改写为「谁 + 做什么 + 带来什么」的结论句，如「用 WorkBuddy 4 步产出专业初稿」</div>
+          </div>
+        </div>
+        <div class="defect">
+          <div class="defect-head"><span class="sev sev-P1">P1 应修复</span>
+            <span class="chip">S7</span> <span class="cat">语言</span> 黑话/套话堆砌</div>
+          <div class="chain">
+            <div><b>证据</b>：检出 1 处（如 抓手），重灾区 SS7</div>
+            <div><b>影响</b>：「赋能/闭环/范式」等空泛词稀释信息密度，读者抓不住实料</div>
+            <div><b>建议</b>：改为口语化业务词（如「赋能业务」→「让销售少做重复活」），单页黑话≤2</div>
+          </div>
+        </div>
+        <div class="defect">
+          <div class="defect-head"><span class="sev sev-P1">P1 应修复</span>
+            <span class="chip">S8</span> <span class="cat">逻辑</span> 话题式标题（未结论化）</div>
+          <div class="chain">
+            <div><b>证据</b>：S8 标题「三类重复工作最耗人」为话题标签，非论断式结论</div>
+            <div><b>影响</b>：只读标题读不出该页论点，金字塔叙事断裂，管理者抓不住重点</div>
+            <div><b>建议</b>：改写为「谁 + 做什么 + 带来什么」的结论句，如「用 WorkBuddy 4 步产出专业初稿」</div>
+          </div>
+        </div></div><div class="grp"><h3 class="grp-h sev-P2">P2 打磨 · 1 项</h3>
+        <div class="defect">
+          <div class="defect-head"><span class="sev sev-P2">P2 打磨</span>
+            <span class="chip">全篇</span> <span class="cat">视觉</span> 全篇 0 图（纯字墙）</div>
+          <div class="chain">
+            <div><b>证据</b>：8/8 页为纯文字，无任何图片或图表</div>
+            <div><b>影响</b>：全程无视觉锚点，长培训/汇报易疲劳；关键概念缺图解，理解门槛高</div>
+            <div><b>建议</b>：为抽象概念（如 LLM/Skill/MCP 关系）补示意图，并用图表替代大段罗列数据</div>
+          </div>
+        </div></div>
+</section>
+
+<section><h2>分维度详述 <span class="sub">内容 / 排版 / 逻辑 / 视觉</span></h2>
+  <div class="dsec"><h4>内容维度</h4><div class="mini"><span class="chip">S6</span> 未完成占位符 — 用真实数据/实测值替换（如【部门/姓名】填具体人与部门），或删除该占位行</div></div><div class="dsec"><h4>排版维度</h4><div class="mini"><span class="chip">S3</span> 页码与绝对序号错位 — 用 fix_pptx.py 自动校正（保留首 run 格式）；属纯字段错误，一次会话即可清空</div></div><div class="dsec"><h4>逻辑维度</h4><div class="mini"><span class="chip">全篇</span> 重复标题 — 用 fix_pptx.py --delete-dupes 保留首个；或合并内容</div><div class="mini"><span class="chip">S2</span> 话题式标题（未结论化） — 改写为「谁 + 做什么 + 带来什么」的结论句，如「用 WorkBuddy 4 步产出专业初稿」</div><div class="mini"><span class="chip">S3</span> 话题式标题（未结论化） — 改写为「谁 + 做什么 + 带来什么」的结论句，如「用 WorkBuddy 4 步产出专业初稿」</div><div class="mini"><span class="chip">S5</span> 话题式标题（未结论化） — 改写为「谁 + 做什么 + 带来什么」的结论句，如「用 WorkBuddy 4 步产出专业初稿」</div><div class="mini"><span class="chip">S6</span> 话题式标题（未结论化） — 改写为「谁 + 做什么 + 带来什么」的结论句，如「用 WorkBuddy 4 步产出专业初稿」</div><div class="mini"><span class="chip">S7</span> 话题式标题（未结论化） — 改写为「谁 + 做什么 + 带来什么」的结论句，如「用 WorkBuddy 4 步产出专业初稿」</div><div class="mini"><span class="chip">S8</span> 话题式标题（未结论化） — 改写为「谁 + 做什么 + 带来什么」的结论句，如「用 WorkBuddy 4 步产出专业初稿」</div></div><div class="dsec"><h4>视觉维度</h4><div class="mini"><span class="chip">全篇</span> 全篇 0 图（纯字墙） — 为抽象概念（如 LLM/Skill/MCP 关系）补示意图，并用图表替代大段罗列数据</div></div>
+</section>
+
+<section><h2>亮点</h2><ul class="strengths"><li>字体统一（2 字族），无混搭</li><li>无元素越界，版式干净</li><li>配色 4 色相，符合 60-30-10</li><li>封面已一句话点题（用 AI 办公，把重复工时砍掉一半）</li><li>无图文比&gt;40%% 的图压字页</li></ul></section>
+
+<section><h2>行动优先级</h2><div class="action"><b>① 先清 P0（可全自动）</b>：用 fix_pptx.py 校正页码/删重/归一字体/清洗 zip；占位符需人工替换真实数据。共 3 项。<br><b>② 再修 P1（结构/语言）</b>：把话题式标题改为结论句、补封面全局结论、收敛配色、清除黑话套话与机械过渡句。共 8 项。<br><b>③ 打磨 P2（视觉细节）</b>：图压字页压缩、过小正文提号、关键页补图示。共 1 项。</div></section>
+
+<footer>由 PPT 优化修复顾问 技能自动生成 · 结构化字段核验</footer>
+</div></body></html>

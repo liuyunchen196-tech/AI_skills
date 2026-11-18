@@ -1,0 +1,37 @@
+# PPT 优化修复顾问 · SkillHub 发布清单
+# 用途：发布到 WorkBuddy 技能市场（SkillHub）时的元数据，网页端/客户端填表可照抄此文件。
+name: ppt-optimiz-fix
+slug: ppt-optimiz-fix
+title: PPT 优化修复顾问
+display_name: PPT 优化修复顾问
+display_name_en: PPT Optimizer & Fixer
+description_zh: 对已有 PPT（.pptx）做「评估 → 分级 → 修复」闭环的专业化润色技能，涵盖五维评分、P0/P1/P2 缺陷分级、字体统一、金字塔原理、图文比审计、去AI味检测与复评闭环。
+description_en: "Evaluates, scores and auto-fixes existing PowerPoint (.pptx) decks with a full assess-grade-fix loop: five-dimension scoring, P0/P1/P2 defect grading, font normalization, pyramid-principle checks, de-AI polish and multi-round re-review."
+version: 1.0.0
+description: 对已有 PPT（.pptx）做「评估 → 分级 → 修复」闭环的专业化润色技能。v1.0.0 进一步收敛使用链路、零跨技能依赖：一键编排器 run_all.py 把多脚本调用收敛为单命令，并直接生成评估报告 HTML 文件（无需额外命令打开，用户自行查看，Agent 直接呈现）；受众适配/说服力自动信号术语表外置为可配置 JSON（--aud-terms 适配特定行业）。基于 XML 字段自动核验（不靠肉眼）：五维量化评分、P0/P1/P2 缺陷分级（报告顶部红底强提示 P0 必修复）、字体统一强制、字体规划套用（按位置/字号匹配，真正通用、不依赖关键词）、金字塔原理（Action-Title 占比 / MECE）、图文比 ≤40% 审计、去AI味检测与修正要点（界面模板感 + 文本机械化过渡 / 黑话 / 排比 / 空洞）。配套自动修复脚本：页码校正、字体归一、重复页清理、zip 清洗。文件锁一律用 python-pptx 另存新文件规避，无需安装任何其他技能或编辑器插件；随包附 requirements.txt（pip install -r 一键装环境）与报告样例截图。适用于企业汇报、培训、投标、咨询稿的专业化精修；离线可用、零外部依赖；并提供复评与多轮闭环能力（标题序列 diff / 旧问题 grep 追踪 / QA 计数对比 / 问题流转表，跨版本追踪问题修复情况）。
+category: 效率办公
+tags: [PPT, 演示文稿, 排版, 字体, 去AI味, 质量评估, 办公, 效率, 复评, 版本对比, 问题流转, QA计数, 视觉缺陷, 评估报告, 术语表外置, P0突出]
+triggers:
+  - 评估 PPT
+  - 审查 PPT
+  - PPT 体检
+  - 修正 PPT
+  - 修复 PPT
+  - 统一字体
+  - 规范版面
+  - 去AI味
+  - 金字塔原理
+  - 图文比
+  - 复评
+  - 多轮复评
+  - 版本对比
+  - 问题流转
+author: lovebuddy
+license: MIT
+requires_api_key: false
+homepage: ""
+# 国际化（i18n）：当前唯一语言为中文（zh-CN），市场展示名与简介以中文为准。
+i18n:
+  zh-CN:
+    title: PPT 优化修复顾问
+    description: 对已有 PPT（.pptx）做「评估 → 分级 → 修复」闭环的专业化润色技能。v1.0.0 一键编排器 run_all.py 直接生成评估报告 HTML 文件（无需额外命令打开），零跨技能依赖，自动信号术语表外置为可配置 JSON（--aud-terms 适配特定行业）；原自动信号（ROI 量化页 / CTA 责任人+时间表 / 管理者语言密度）保留为内置默认。基于 XML 字段自动核验：五维评分、字体统一、金字塔原理、图文比 ≤40% 审计、P0 红底强提示、去AI味检测与修正要点，并配套自动修复脚本（页码校正 / 字体归一 / 重复页清理 / zip 清洗）。离线可用、零外部依赖；并提供复评与多轮闭环能力（标题序列 diff / 旧问题 grep 追踪 / QA 计数对比 / 问题流转表）。

@@ -1,0 +1,20 @@
+{
+  "name": "流程图设计助手",
+  "skillId": "byai-diagram-designer",
+  "version": "1.0.5",
+  "display_name": "流程图设计助手",
+  "display_name_en": "Diagram Designer",
+  "description_zh": "一句话需求到自包含 HTML 流程图：自然语言描述或 Mermaid 文本自动转 IR、再确定性渲染成正交无交叉、内联 SVG 的自包含 HTML。覆盖系统架构、流程、时序、生命周期、决策、矩阵、对比、AI/Agent 模式、UML 等 10 大类，提供 12 套原创风格、40+ 图标、交互查看器（focus / 上下游可达 / 分享卡），并由 9 类硬契约校验（IR schema / 布局 / 间距 / 路由 / 交叉 / 标签 / 字体 / 语义 / 交付），ERROR 不可交付、WARNING 出具体修复建议。",
+  "description_en": "Turn a one-line description or Mermaid text into a self-contained HTML diagram. Covers 10 diagram types (architecture, workflow, sequence, lifecycle, decision, matrix, comparison, AI/Agent pattern, UML, swimlane) with 12 hand-crafted visual styles, 40+ product icons, deterministic orthogonal routing, zero edge crossing when topologically possible, and an interactive viewer with focus / reachability / story / share card. A 9-rule composer contract validates every artifact before delivery.",
+  "examples_zh": [
+    "画一个 RAG 系统的架构图，要能看清检索和生成两条链路",
+    "把这段 Mermaid 时序图转成一张可以直接发给同事的 HTML 图",
+    "帮我画订单状态机的生命周期图，标注每个状态的流转条件"
+  ],
+  "examples_en": [
+    "Draw an architecture diagram of a RAG system that clearly shows the retrieval and generation chains",
+    "Convert this Mermaid sequence diagram into an HTML diagram I can send to a colleague directly",
+    "Draw a lifecycle diagram of the order state machine, labelling the transition condition of each state"
+  ],
+  "_note": "开放平台技能表单字段档案，随技能包一同交付，供平台与本地详情页读取同一份元数据。examples_zh / examples_en 固定 3 条，对应详情页「测试这样用」；SKILL.md frontmatter 不重复写 examples。name / skillId 使用技能标识 byai-diagram-designer。变更：v1.0.2 修正 references 两处旧交叉引用、补 LICENSE；v1.0.4 二次更换技能图标；v1.0.5 本文件随包交付（此前打包器误将它当作内部档案排除，导致平台按 SKILL.md 引用判定资产包缺件而驳回）。"
+}

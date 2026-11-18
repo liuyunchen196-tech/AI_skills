@@ -1,0 +1,11 @@
+{
+  "name": "图片转visio",
+  "installedAt": 1793233755415,
+  "source": "marketplace",
+  "version": "1.0.0",
+  "skillId": "skill_2109453190096928768",
+  "pay_mode": 0,
+  "description_zh": "把位图（截图/论文插图/结构示意图/流程图）在 Visio 中复刻成原生可编辑图形，每个元素都是可点选、可改色、可改线宽、可改文字的真 shape，而非插入的贴图。流程为像素级测量源图、换算 Visio 坐标、经 COM 生成原生 shape、导出栅格、与原图逐区域墨迹比对并迭代收敛。",
+  "description_en": "Rebuild a bitmap (screenshot, paper figure, structural diagram, flowchart) into native, fully editable Visio shapes instead of a pasted picture. Each element can be selected, recolored, restroked and retexted. The workflow measures the source image pixel by pixel, converts to Visio coordinates, generates native shapes over COM, exports a raster, then compares ink coverage region by region and iterates until it converges.",
+  "iconSource": "letter:auto"
+}

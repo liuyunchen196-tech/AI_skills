@@ -1,0 +1,146 @@
+{
+  "form": {
+    "code": "",
+    "fields": [
+      {
+        "code": "",
+        "key": "content",
+        "label": "PPT内容",
+        "maxLength": 10000,
+        "placeholder": "输入或粘贴PPT主题、正文或内容大纲；也可在下方上传内容文件，二者至少提供一项",
+        "required": false,
+        "type": "textarea"
+      },
+      {
+        "code": "",
+        "file_types": [
+          "image",
+          "word",
+          "excel",
+          "ppt",
+          "text",
+          "pdf",
+          "markdown"
+        ],
+        "hint": "与上方PPT内容至少提供一项；支持 Word、PDF、PPT、Excel、图片、纯文本、Markdown 等；非任务执行、上传、大小处理、格式转换或完整性校验所必需，不解析附件；必要解析结果不得用于推测、补充或改写其他参数。",
+        "key": "content_files",
+        "label": "内容文件",
+        "maxCount": 10,
+        "required": false,
+        "type": "file_upload"
+      },
+      {
+        "code": "",
+        "file_types": [
+          "image",
+          "ppt",
+          "pdf"
+        ],
+        "hint": "上传需要复刻其版式和视觉风格的参考PPT；非任务执行、上传、大小处理、格式转换或完整性校验所必需，不解析附件；必要解析结果不得用于推测、补充或改写其他参数。",
+        "key": "template_ppt",
+        "label": "参考PPT",
+        "maxCount": 1,
+        "required": true,
+        "type": "file_upload"
+      },
+      {
+        "code": "",
+        "default": "auto",
+        "key": "language",
+        "label": "语言",
+        "options": [
+          {
+            "code": "",
+            "key": "auto",
+            "label": "自动匹配"
+          },
+          {
+            "code": "",
+            "key": "chinese",
+            "label": "中文"
+          },
+          {
+            "code": "",
+            "key": "english",
+            "label": "英文"
+          },
+          {
+            "code": "",
+            "key": "japanese",
+            "label": "日语"
+          },
+          {
+            "code": "",
+            "key": "korean",
+            "label": "韩语"
+          },
+          {
+            "code": "",
+            "key": "portuguese_brazil",
+            "label": "葡萄牙语（巴西）"
+          },
+          {
+            "code": "",
+            "key": "spanish_mexico",
+            "label": "西班牙语（墨西哥）"
+          },
+          {
+            "code": "",
+            "key": "russian",
+            "label": "俄语"
+          }
+        ],
+        "required": false,
+        "type": "select"
+      },
+      {
+        "code": "",
+        "default": "auto",
+        "key": "pages",
+        "label": "页数范围",
+        "options": [
+          {
+            "code": "",
+            "key": "auto",
+            "label": "自动匹配"
+          },
+          {
+            "code": "",
+            "key": "p1_10",
+            "label": "1-10页"
+          },
+          {
+            "code": "",
+            "key": "p11_15",
+            "label": "11-15页"
+          },
+          {
+            "code": "",
+            "key": "p16_20",
+            "label": "16-20页"
+          },
+          {
+            "code": "",
+            "key": "p21_25",
+            "label": "21-25页"
+          },
+          {
+            "code": "",
+            "key": "p26_30",
+            "label": "26-30页"
+          }
+        ],
+        "required": false,
+        "type": "select"
+      }
+    ],
+    "prompt": "PPT复刻，用我上传的内容。\nPPT内容：{content}\n内容文件：{content_files}\n参考PPT：{template_ppt}\n语言：{language}\n篇幅：{pages}"
+  },
+  "schema_version": 1,
+  "skill": {
+    "category": "办公设计",
+    "description": "根据用户提供的内容和PPT、PDF或页面图片参考，复刻字体、配色、版式与视觉风格，生成新演示页面。适用于PPT复刻、PPT套版、PPT模板套用、内容套版、slide template replication。需提供参考文件，以及内容文字或内容文件至少一项；不从零设计全新风格，不承诺参考图片含可编辑母版。由美图设计室提供。",
+    "id": "ppt-template",
+    "title": "PPT复刻"
+  }
+}

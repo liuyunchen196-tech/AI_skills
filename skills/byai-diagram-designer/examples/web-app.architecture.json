@@ -1,0 +1,41 @@
+{
+  "schema_version": "1",
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "电商平台运行时架构",
+    "subtitle": "接入 → 服务 → 存储 三层，主链路一目了然",
+    "style": "flat-icon",
+    "quality_profile": "showcase"
+  },
+  "nodes": [
+    { "id": "web", "label": "Web 前端", "type": "frontend", "icon": "react", "tech": "React + Vite" },
+    { "id": "app", "label": "移动 App", "type": "frontend", "icon": "browser", "tech": "Flutter" },
+    { "id": "gw", "label": "API 网关", "type": "backend", "icon": "nginx", "tech": "Nginx", "desc": "限流 · 鉴权 · 路由" },
+    { "id": "user", "label": "用户服务", "type": "backend", "icon": "server", "tech": "Spring Boot" },
+    { "id": "order", "label": "订单服务", "type": "backend", "icon": "server", "tech": "Spring Boot", "variant": "emphasis" },
+    { "id": "pay", "label": "支付服务", "type": "backend", "icon": "server", "tech": "Go" },
+    { "id": "mysql", "label": "业务主库", "type": "database", "icon": "postgres", "tech": "PostgreSQL" },
+    { "id": "redis", "label": "会话缓存", "type": "database", "icon": "redis", "tech": "Redis" },
+    { "id": "mq", "label": "订单事件总线", "type": "messagebus", "icon": "kafka", "tech": "Kafka" },
+    { "id": "oss", "label": "对象存储", "type": "storage", "icon": "bucket", "tech": "S3" }
+  ],
+  "edges": [
+    { "source": "web", "target": "gw", "label": "HTTPS", "kind": "sync" },
+    { "source": "app", "target": "gw", "label": "HTTPS", "kind": "sync" },
+    { "source": "gw", "target": "user", "label": "gRPC", "kind": "sync" },
+    { "source": "gw", "target": "order", "label": "gRPC", "kind": "sync" },
+    { "source": "gw", "target": "pay", "label": "gRPC", "kind": "sync" },
+    { "source": "user", "target": "mysql", "label": "读写", "kind": "write" },
+    { "source": "user", "target": "redis", "label": "会话", "kind": "read" },
+    { "source": "order", "target": "mysql", "label": "读写", "kind": "write" },
+    { "source": "order", "target": "mq", "label": "订单已创建", "kind": "event" },
+    { "source": "pay", "target": "oss", "label": "对账单", "kind": "write" }
+  ],
+  "groups": [
+    { "id": "vpc", "label": "VPC · 生产环境", "members": ["gw", "user", "order", "pay", "mq", "mysql", "redis"] }
+  ],
+  "views": [
+    { "id": "write", "label": "下单主链路", "nodes": ["web", "gw", "order", "pay", "mysql"] },
+    { "id": "async", "label": "异步链路", "nodes": ["order", "mq"] }
+  ]
+}

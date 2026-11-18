@@ -1,0 +1,21 @@
+{
+  "_note": "节点-连线图示模板（Deck B 范式）。复制本文件，按实际内容改 nodes/edges。layout 写 'diagram' 或不写（含 graph/nodes 字段会自动路由）。graph.type 可显式写 tree/flow/grid，缺省自动判定。",
+  "title": "数智园区总体架构",
+  "subtitle": "集团 → 中台 → 应用",
+  "layout": "diagram",
+  "graph": {
+    "type": "tree",
+    "nodes": [
+      {"id": "root", "label": "集团总部", "sub": "战略与治理", "style": "highlight"},
+      {"id": "t", "label": "技术中台", "sub": "AI / 物联"},
+      {"id": "b", "label": "业务中台", "sub": "招商 / 运营"},
+      {"id": "d", "label": "数据平台", "sub": "湖仓一体"}
+    ],
+    "edges": [
+      {"from": "root", "to": "t"},
+      {"from": "root", "to": "b"},
+      {"from": "root", "to": "d"}
+    ]
+  },
+  "page_label": "01 / 01"
+}

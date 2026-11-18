@@ -1,0 +1,13 @@
+{
+  "name": "rea-skill",
+  "version": "1.0.0",
+  "private": true,
+  "description": "本地 REA (Reverse Engineer Anything) 技能：统一 CLI+MCP 逆向分析工具，自包含部署于 D:\\AI技能库\\skills\\rea",
+  "type": "module",
+  "dependencies": {
+    "rea-agents": "6.7.0"
+  },
+  "scripts": {
+    "rea": "node node_modules/rea-agents/scripts/rea.mjs"
+  }
+}

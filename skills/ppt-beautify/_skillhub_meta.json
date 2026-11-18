@@ -1,0 +1,13 @@
+{
+  "name": "PPT美化",
+  "installedAt": 1792827213550,
+  "source": "marketplace",
+  "version": "1.0.30",
+  "skillId": "skill_2091019232402231296",
+  "pay_mode": 0,
+  "description_zh": "美化现有PPT中的页面，调整字体、配色、版式和视觉层级。适用于PPT美化、PPT排版。美图设计室提供。",
+  "description_en": "One-click PPT makeover.",
+  "iconSource": "https://openplatform-cdn.codebuddy.cn/public/common/capability_cover/2202d28d-910f-4c97-9c2e-6c8a67e90b7e/41dc837c-a0eb-4dde-9150-6100af0fda65.jpg",
+  "iconLocalPath": "C:\\Users\\liuwust\\.workbuddy\\skills\\ppt-beautify\\_icon.jpg",
+  "iconDownloadedFrom": "https://openplatform-cdn.codebuddy.cn/public/common/capability_cover/2202d28d-910f-4c97-9c2e-6c8a67e90b7e/41dc837c-a0eb-4dde-9150-6100af0fda65.jpg"
+}

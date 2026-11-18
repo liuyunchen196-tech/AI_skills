@@ -1,0 +1,4 @@
+# PPT 优化修复顾问 · 运行依赖
+# 安装：python -m pip install -r requirements.txt
+# 唯一第三方依赖；其余均为 Python 标准库（stdlib）。
+python-pptx>=1.0.0

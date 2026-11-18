@@ -1,0 +1,26 @@
+{
+  "schema_version": "1",
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "OAuth2 授权码模式调用时序",
+    "subtitle": "三方参与：用户 / 客户端 / 授权服务器 / 资源服务器",
+    "style": "notion-clean",
+    "quality_profile": "showcase"
+  },
+  "nodes": [
+    { "id": "user", "label": "用户", "type": "user", "icon": "user" },
+    { "id": "client", "label": "客户端应用", "type": "frontend", "icon": "browser" },
+    { "id": "auth", "label": "授权服务器", "type": "security", "icon": "lock" },
+    { "id": "api", "label": "资源服务器", "type": "backend", "icon": "server" }
+  ],
+  "edges": [
+    { "source": "user", "target": "client", "label": "1. 访问受保护资源", "kind": "sync", "order": 1 },
+    { "source": "client", "target": "auth", "label": "2. 重定向到授权页", "kind": "sync", "order": 2 },
+    { "source": "user", "target": "auth", "label": "3. 确认授权", "kind": "sync", "order": 3 },
+    { "source": "auth", "target": "client", "label": "4. 回调 code", "kind": "return", "order": 4 },
+    { "source": "client", "target": "auth", "label": "5. code 换 token", "kind": "sync", "order": 5 },
+    { "source": "auth", "target": "client", "label": "6. 返回 access_token", "kind": "return", "order": 6 },
+    { "source": "client", "target": "api", "label": "7. 携带 token 请求", "kind": "sync", "order": 7 },
+    { "source": "api", "target": "client", "label": "8. 返回资源", "kind": "return", "order": 8 }
+  ]
+}

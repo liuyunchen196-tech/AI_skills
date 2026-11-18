@@ -1,0 +1,8 @@
+{
+  "_comment": "受众/说服力自动信号术语表（外置可配置）。适配特定行业时：复制本文件、修改对应列表，通过 inspect_pptx.analyze(aud_terms_path=...) 或 run_all.py --aud-terms 传入。roi_terms / cta_title_hint / manager_terms 为有序列表（首次命中即记）；owner_key_set / timeline_set 为集合（本页同时出现责任主体+时间节点才判定 CTA 收口）。",
+  "roi_terms": ["ROI", "投资回报", "回收期", "回本", "收益率", "年化收益", "投入产出", "成本节约", "成本节省", "成本下降", "降本", "增效", "回报周期", "payback", "Payback", "NPV", "IRR", "投入产出比", "盈亏平衡", "回收年限"],
+  "cta_title_hint": ["下一步", "行动", "Q&A", "q&a", "计划", "落地", "安排", "分工", "时间表", "责任", "跟进", "执行"],
+  "owner_key_set": ["责任人", "负责人", "Owner", "owner", "落地", "谁来做", "分工"],
+  "timeline_set": ["时间表", "时间节点", "里程碑", "截止", "排期", "交付时间", "Deadline", "deadline", "日期"],
+  "manager_terms": ["价值", "成本", "风险", "收益", "效率", "投入", "回报", "ROI", "降本", "增效", "回收", "亏损", "利润", "预算", "产出", "产能"]
+}

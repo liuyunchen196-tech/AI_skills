@@ -1,0 +1,29 @@
+{
+  "schema_version": "1",
+  "diagram_type": "lifecycle",
+  "meta": {
+    "title": "订单状态流转",
+    "subtitle": "含支付重试与超时关单路径",
+    "style": "warm-sand",
+    "quality_profile": "standard"
+  },
+  "nodes": [
+    { "id": "created", "label": "已创建", "type": "process", "icon": "doc", "desc": "待支付" },
+    { "id": "paying", "label": "支付中", "type": "process", "icon": "loop", "desc": "等待渠道回调" },
+    { "id": "paid", "label": "已支付", "type": "process", "icon": "server", "variant": "emphasis" },
+    { "id": "shipped", "label": "已发货", "type": "process", "icon": "container" },
+    { "id": "done", "label": "已完成", "type": "terminal", "icon": "clock" },
+    { "id": "closed", "label": "已关闭", "type": "terminal", "icon": "terminal", "desc": "超时或取消" },
+    { "id": "refunding", "label": "退款中", "type": "process", "icon": "loop" }
+  ],
+  "edges": [
+    { "source": "created", "target": "paying", "label": "提交支付", "kind": "flow" },
+    { "source": "paying", "target": "paid", "label": "支付成功", "kind": "flow" },
+    { "source": "paying", "target": "created", "label": "支付失败可重试", "kind": "loop" },
+    { "source": "created", "target": "closed", "label": "超时应关闭", "kind": "event" },
+    { "source": "paid", "target": "shipped", "label": "仓库发货", "kind": "flow" },
+    { "source": "shipped", "target": "done", "label": "确认收货", "kind": "flow" },
+    { "source": "paid", "target": "refunding", "label": "发起退款", "kind": "flow" },
+    { "source": "refunding", "target": "closed", "label": "退款完成", "kind": "flow" }
+  ]
+}

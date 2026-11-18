@@ -1,0 +1,18 @@
+{
+  "schema_version": "1",
+  "diagram_type": "comparison",
+  "meta": {
+    "title": "RAG / 微调 / 提示工程 选型对比",
+    "subtitle": "三种知识注入路线的工程权衡",
+    "style": "notion-clean",
+    "quality_profile": "showcase"
+  },
+  "columns": ["RAG 检索增强", "监督微调", "提示工程"],
+  "rows": [
+    { "label": "知识更新", "cells": ["改库即生效，秒级", "需重新训练", "改提示词即生效"] },
+    { "label": "前期成本", "cells": ["中等：建索引", "高：数据与算力", "极低"] },
+    { "label": "可解释性", "cells": ["可给出引用来源", "黑盒，难溯源", "完全透明"] },
+    { "label": "幻觉风险", "cells": ["低，有依据", "中，仍会编造", "取决于上下文"] },
+    { "label": "适用场景", "cells": ["知识库问答、文档助手", "固定风格与格式", "快速验证与原型"] }
+  ]
+}
