@@ -20,6 +20,9 @@ __pycache__/
 # 技能内嵌的独立 Git 仓库
 **/.git/
 
+# 由独立仓库维护的技能（避免重复维护）
+/skills/perfect-world-gs-editor/
+
 # 系统与编辑器杂项
 Thumbs.db
 desktop.ini

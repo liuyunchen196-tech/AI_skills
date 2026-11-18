@@ -200,3 +200,17 @@ pwsh D:\AI技能库\relink-skills.ps1
 注意：`extract_tables.py` 对「一格一矩形 + 合并单元格」的复杂表只能做粗提取，
 需用 `--probe-cols` 探出列坐标后人工核定，或按表写 `--tables-config`；这一点已写入 SKILL.md。
 
+---
+
+## 发布到 GitHub
+
+- 公开仓库：<https://github.com/liuyunchen196-tech/AI_skills>
+- 本仓库是技能库的发布镜像。`runtime/`（OCR 虚拟环境等运行时依赖）、`archive/`（历史备份）、
+  `.opencode/`（宿主工具配置）以及各技能的 `node_modules/`、`venv/` 均不入库，克隆后按各技能
+  `SKILL.md` 的说明安装依赖即可。
+- `rea` 技能附带上游源码（MIT），许可与第三方声明见 `skills/rea/source/rea-main/LICENSE`
+  与 `THIRD_PARTY_NOTICES.md`。
+- `perfect-world-gs-editor` 由独立仓库维护，不在本库内重复存放：
+  <https://github.com/liuyunchen196-tech/perfect-world-gs-editor>
+- 各技能的目录联接（Junction）由 `relink-skills.ps1` 一键补建，见上文「维护脚本」。
+
